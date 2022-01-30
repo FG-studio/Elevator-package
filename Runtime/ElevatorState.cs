@@ -1,4 +1,6 @@
 using System;
+using UnityEngine;
+
 
 namespace FGElevator
 {
@@ -43,8 +45,10 @@ namespace FGElevator
 			if (_state != null)
 			{
 				this._state.ListenerUnsubcribe();
+				// Debug.Log("state change from " + _state.Type);
 			}
 
+			// Debug.Log("state change to " + state.Type);
 			this._state = state;
 			this._state.ListenerSubcribe(this);
 			if (this._observer != null)
@@ -173,7 +177,7 @@ namespace FGElevator
 	{
 		public ElevatorLowestState()
 		{
-			_switchDisable = true;
+			_switchDisable = false;
 			_type = ElevatorStateType.LOWEST;
 		}
 

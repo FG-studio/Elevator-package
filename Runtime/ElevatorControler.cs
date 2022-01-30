@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace FGElevator
 {
@@ -9,11 +10,10 @@ namespace FGElevator
         ElevatorStateType _initState = ElevatorStateType.LOWEST;
         ElevatorContext _ctx;
         ElevatorPlatform _platform;
-        List<ElevatorSwitch> _switchList;
+        List<ElevatorSwitch> _switchList = new List<ElevatorSwitch>();
         float _speed = 0;
-        void init(float speed, ElevatorPlatform platform, ElevatorSwitch[] switchList)
+        public void init(float speed, ElevatorPlatform platform, ElevatorSwitch[] switchList)
         {
-            _ctx = new ElevatorContext(_initState, this);
             _speed = speed;
             _platform = platform;
             _platform.Register(this);
@@ -23,6 +23,7 @@ namespace FGElevator
                 _switch.Register(this);
                 _switchList.Add(_switch);
             }
+            _ctx = new ElevatorContext(_initState, this);
         }
 
         public void OnChangeState(ElevatorStateType state, bool triggerState)

@@ -1,13 +1,15 @@
 using System;
+using UnityEngine;
 
 namespace FGElevator
 {
-    class ElevatorSwitch
+    public class ElevatorSwitch : MonoBehaviour
     {
-        ElevatorController _controller;
-        bool _isDisable = false;
+        protected ElevatorController _controller;
+        protected bool _isDisable = false;
         public void SwitchToggle()
         {
+            // Debug.Log("is disabled " + _isDisable);
             if(!_isDisable && _controller != null)
             {
                 _controller.OnSwitchToggle();
@@ -25,9 +27,9 @@ namespace FGElevator
         }
     }
 
-    abstract class ElevatorPlatform
+    public abstract class ElevatorPlatform : MonoBehaviour
     {
-        ElevatorController _controller;
+        protected ElevatorController _controller;
         public abstract void Move(float speed);
         public abstract void Stop();
 
