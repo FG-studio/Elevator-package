@@ -1,0 +1,13 @@
+{
+    "name": "com.unity.FG-Elevator",
+    "version": "1.0.0",
+    "displayName": "FG Elevator",
+    "description": "Elevator package for fg",
+    "unity": "2020.3",
+    "unityRelease": "6f1",
+    "dependencies": {},
+    "author": {
+      "name": "FG Lab",
+      "email": "hieu811@gmail.com"
+    }
+}
