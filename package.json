@@ -1,5 +1,5 @@
 {
-    "name": "com.unity.FG-Elevator",
+    "name": "com.unity.fg.elevator",
     "version": "1.0.0",
     "displayName": "FG Elevator",
     "description": "Elevator package for fg",
